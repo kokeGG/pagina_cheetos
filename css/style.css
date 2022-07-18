@@ -1,0 +1,246 @@
+:root {
+    --fuenteHeading: 'Edu SA Beginner', cursive;
+
+    --rosa: #e442c1;
+    --blanco: #FFFFFF;
+    --gris: #e1e1e1;
+    --negro: #000000;
+}
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    /* para que 1 rem = 10px*/
+}
+body {
+    font-size: 1.6rem;
+    line-height: 2;
+    background-image: url("../img/acapulco-vibes.jpg");
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    /* Hereda del elemento padre, que es html, tiene la ventaja que si lo usas en otro selector lo hereda al otro selector */
+}
+.no-margin {
+    margin: 0; /* eliminar margenes */
+}
+/* Globales */
+.contenedor {
+    max-width: 120rem;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 25rem;
+    /* Para centrar el contenido en la pantalla*/
+    /* width: min(90%, 120rem); es lo mismo que max-width y width */
+}
+@media (min-width: 760px) {
+    .contenedor {
+        margin-top: 15rem;
+    }
+}
+
+h1 {
+    font-size: 2.2rem;
+    display: block;
+    font-family: var(--fuenteHeading);
+    color: var(--blanco);
+    text-align: center;
+    
+}
+@media (min-width: 760px) {
+    h1 {
+        font-size: 5rem;
+    }
+}
+p {
+    font-size: 7.8rem;
+    font-family: var(--fuenteHeading);
+    color: var(--blanco);
+    text-align: center;
+    margin: auto;
+    margin-top: 30rem;
+
+}
+.botones {
+    display: flex;
+    gap: 10rem;
+    justify-content: center;
+}
+.boton {
+    background: linear-gradient(32deg, rgba(232,13,13,1) 11%, rgba(255,102,13,1) 49%, rgba(255,222,0,1) 75%);;
+    font-family: var(--fuenteHeading);
+    color: var(--negro);
+    text-align: center;
+    padding: 1rem 3rem;
+    text-decoration: none;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: none;
+    border-radius: 0.4rem;
+}
+.boton:hover {
+    cursor: pointer;
+}
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.caras {
+    display: flex;
+    justify-content: space-between;
+}
+.rostro-perros {
+    width: 10.2rem;
+}
+@media (min-width: 760px) {
+    .rostro-perros {
+        width: 27rem;
+    }
+}
+
+/* ANIMACION */
+.animated-shadow {
+    height: 140px;
+    font-size: 16px;
+    left: 0;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+    animation: move linear 2000ms infinite;
+    z-index: 2;
+    padding-top: 10px;
+   /* -webkit-text-stroke: 1px white;*/
+    color: transparent; 
+  }
+  
+  .animated {
+    
+    font-size: 3.5rem;
+    left: 0;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+    animation: move linear 2000ms infinite;
+    z-index: 2;
+   -webkit-text-stroke: 1px white;
+    color: transparent; 
+    width: 100%;
+  }
+  
+  @media (min-width: 760px) {
+    .animated {
+        font-size: 5rem;
+    }
+
+    .animated-shadow {
+        font-size: 6rem;
+    }
+    
+  }
+  /*Animación para rotar las sombras*/
+  @keyframes move {
+    0% {
+      text-shadow:
+        4px -4px 0 #da0641,
+        3px -3px 0 #da0641,
+        2px -2px 0 #da0641,
+        1px -1px 0 #da0641,
+        -4px 4px 0 #13f1fc,
+        -3px 3px 0 #13f1fc,
+        -2px 2px 0 #13f1fc,
+        -1px 1px 0 #13f1fc
+      ;
+    }
+    25% {
+      text-shadow:
+        -4px -4px 0 #13f1fc,
+        -3px -3px 0 #13f1fc,
+        -2px -2px 0 #13f1fc,
+        -1px -1px 0 #13f1fc,
+        4px 4px 0 #da0641,
+        3px 3px 0 #da0641,
+        2px 2px 0 #da0641,
+        1px 1px 0 #da0641
+      ;
+    }
+    50% {
+      text-shadow:
+        -4px 4px 0 #da0641,
+        -3px 3px 0 #da0641,
+        -2px 2px 0 #da0641,
+        -1px 1px 0 #da0641,
+        4px -4px 0 #13f1fc,
+        3px -3px 0 #13f1fc,
+        2px -2px 0 #13f1fc,
+        1px -1px 0 #13f1fc
+      ;
+    }
+    75% {
+      text-shadow:
+        4px 4px 0 #13f1fc,
+        3px 3px 0 #13f1fc,
+        2px 2px 0 #13f1fc,
+        1px 1px 0 #13f1fc,
+        -4px -4px 0 #da0641,
+        -3px -3px 0 #da0641,
+        -2px -2px 0 #da0641,
+        -1px -1px 0 #da0641
+      ;
+    }
+    100% {
+      text-shadow:
+        4px -4px 0 #da0641,
+        3px -3px 0 #da0641,
+        2px -2px 0 #da0641,
+        1px -1px 0 #da0641,
+        -4px 4px 0 #13f1fc,
+        -3px 3px 0 #13f1fc,
+        -2px 2px 0 #13f1fc,
+        -1px 1px 0 #13f1fc
+      ;
+    }
+  }
+
+.imagenes {
+  display: flex;
+  justify-content: center;
+  margin-top: 23rem;
+}
+
+.princesa {
+  width: 18rem;
+  margin-right: 5rem;
+}
+
+.chester {
+  width: 13rem;
+  margin-top: 20rem;
+}
+
+@media (min-width: 760px) {
+  .imagenes {
+    display: flex;
+    justify-content: center;
+    margin-top: 15rem;
+  }
+  
+  .princesa {
+    width: 31rem;
+    margin-right: 28rem;
+  }
+  
+  .chester {
+    width: 20rem;
+  }
+}
